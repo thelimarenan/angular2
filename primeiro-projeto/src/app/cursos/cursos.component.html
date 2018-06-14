@@ -2,7 +2,10 @@
   Lista de cursos do Portal do {{ nomePortal }}
 </p>
 
-<curso-detalhe-app></curso-detalhe-app>
+<app-curso-detalhe></app-curso-detalhe>
+
 <ul>
-  <li *ngFor="let curso of cursos">{{ curso }}</li>
+  <li *ngFor="let curso of cursos">
+    {{ curso }}
+  </li>
 </ul>
