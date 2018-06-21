@@ -1,4 +1,4 @@
-<section class="property-binding">
+<!-- <section class="property-binding"> -->
   <!-- <article>
     <h2>Interpolation / Interpolação</h2>
     <p>String por interpolação <a href="">{{ url }}</a></p>
@@ -13,7 +13,7 @@
     <img bind-src="urlImagem">
   </article> -->
 
-  <article>
+  <!-- <article>
     <h3>Class e Style Bindings</h3>
     <div>
       Selecione uma classe:
@@ -46,5 +46,62 @@
         [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         Erro</div>
     </div>
+  </article> -->
+<!-- 
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="botaoClicado()" 
+        class="btn btn-primary">Me clique</button>
+
+        <br><br>
+
+        <input type="text"
+          (keyup)="onKeyUp($event)"
+          (keyup.enter)="salvarValor(campoInput.value)"
+          (blur)="salvarValor(campoInput.value)"
+          #campoInput />
+
+        <p>{{ valorAtual }}</p>
+        <p>{{ valorSalvo }}</p>
+
+        <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.highlight]="isMouseOver"
+        >Passe o mouse sobre mim</span>
+    </div>
+  </article>
+</section> -->
+
+<section>
+  <article>
+    <h3>Two-way data binding</h3>
+
+    <div>
+      <input type="text" 
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+      
+      <input type="text" 
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+
+      <input type="text" [(ngModel)]="nome">
+      <p>Você digitou: {{ nome }}</p>
+    </div>
+
+    <div>
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+
+      <input type="text" [(ngModel)]="pessoa.nome">
+      <input type="text" [(ngModel)]="pessoa.idade">
+    </div>
   </article>
 </section>
+
+<hr>
+
+<app-meu-form></app-meu-form>
